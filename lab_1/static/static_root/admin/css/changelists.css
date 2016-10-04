@@ -12,7 +12,7 @@
 .change-list .hiddenfields { display:none; }
 
 .change-list .filtered table {
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #c4c4c4;
 }
 
 .change-list .filtered {
@@ -49,7 +49,7 @@
 }
 
 .change-list .filtered .paginator {
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #c4c4c4;
 }
 
 /* CHANGELIST TABLES */
@@ -66,12 +66,12 @@
 }
 
 #changelist table tbody td, #changelist table tbody th {
-    border-left: 1px solid #ddd;
+    border-left: 1px solid #c4c4c4;
 }
 
 #changelist table tbody td:first-child, #changelist table tbody th:first-child {
     border-left: 0;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #c4c4c4;
 }
 
 #changelist table tbody td.action-checkbox {
@@ -86,9 +86,9 @@
 
 #changelist #toolbar {
     padding: 3px;
-    border-bottom: 1px solid #ddd;
-    background: #e1e1e1 url(../img/nav-bg.gif) top left repeat-x;
-    color: #666;
+    border-bottom: 1px solid #c4c4c4;
+    background: #bbbbbb url(../img/nav-bg.gif) top left repeat-x;
+    color: #4d4d4d;
 }
 
 #changelist #toolbar form input {
@@ -112,7 +112,7 @@
     right: 0;
     z-index: 1000;
     width: 160px;
-    border-left: 1px solid #ddd;
+    border-left: 1px solid #c4c4c4;
     background: #efefef;
     margin: 0;
 }
@@ -120,7 +120,7 @@
 #changelist-filter h2 {
     font-size: 11px;
     padding: 2px 5px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #c4c4c4;
 }
 
 #changelist-filter h3 {
@@ -192,7 +192,7 @@
     padding-bottom: 10px;
     line-height: 22px;
     margin: 0;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #c4c4c4;
 }
 
 .paginator a:link, .paginator a:visited {
@@ -234,7 +234,7 @@
 
 .filtered .actions {
     margin-right: 160px !important;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #c4c4c4;
 }
 
 #changelist table input {
@@ -249,7 +249,7 @@
     color: #999;
     padding: 3px;
     border-top: 1px solid #fff;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #c4c4c4;
     background: white url(../img/nav-bg-reverse.gif) 0 -10px repeat-x;
 }
 

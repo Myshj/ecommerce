@@ -5,6 +5,27 @@ from django.contrib import admin
 
 admin.autodiscover()
 
+from django.contrib.auth.models import User
+from rest_framework import routers, serializers, viewsets, urls
+
+
+# Serializers define the API representation.
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ('url', 'username', 'email', 'is_staff')
+
+
+# ViewSets define the view behavior.
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
+
 urlpatterns = patterns('',
                        # Examples:
                        url(r'^$', 'products.views.home', name='home'),
@@ -26,12 +47,15 @@ urlpatterns = patterns('',
                        # (?P<all_items>.*)
                        # (?P<id>\d+)
                        url(r'^admin/', include(admin.site.urls)),
-                       url(r'^accounts/logout/$', 'accounts.views.logout_view', name='auth_logout'),
-                       url(r'^accounts/login/$', 'accounts.views.login_view', name='auth_login'),
-                       url(r'^accounts/register/$', 'accounts.views.registration_view', name='auth_register'),
-                       url(r'^accounts/address/add/$', 'accounts.views.add_user_address', name='add_user_address'),
-                       url(r'^accounts/activate/(?P<activation_key>\w+)/$', 'accounts.views.activation_view',
-                           name='activation_view'),
+                       # url(r'^accounts/logout/$', 'accounts.views.logout_view', name='auth_logout'),
+                       # url(r'^accounts/login/$', 'accounts.views.login_view', name='auth_login'),
+                       # url(r'^accounts/register/$', 'accounts.views.registration_view', name='auth_register'),
+                       # url(r'^accounts/address/add/$', 'accounts.views.add_user_address', name='add_user_address'),
+                       # url(r'^accounts/activate/(?P<activation_key>\w+)/$', 'accounts.views.activation_view',
+                       #     name='activation_view'),
+
+                       url(r'^api/', include(router.urls)),
+                       url(r'^api/auth/', include('rest_framework.urls', namespace='rest_framework')),
                        )
 
 if settings.DEBUG:

@@ -20,9 +20,9 @@
             <li><a href="{% url 'cart' %}">Cart <span class="badge">{% if not request.session.items_total %} 0 {% else %} {{ request.session.items_total }} {% endif%}</span></a></li>
             {% if user.is_authenticated %}
             <li><a href="#">Account</a></li>
-            <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+            <li><a href="{% url 'rest_framework:logout' %}?next=/">Logout</a></li>
             {% else %}
-            <li><a href="{% url 'auth_login' %}">Login</a></li>
+            <li><a href="{% url 'rest_framework:login' %}">Login</a></li>
             {% endif %}
           </ul>
         </div><!--/.nav-collapse -->

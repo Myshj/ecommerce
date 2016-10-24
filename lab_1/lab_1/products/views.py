@@ -8,6 +8,7 @@ from marketing.models import MarketingMessage, Slider
 
 from .models import Product, ProductImage, Category
 
+from django.core.cache import caches
 
 def search(request):
     try:
@@ -22,6 +23,9 @@ def search(request):
     else:
         template = 'products/home.html'
         context = {}
+
+
+
     return render(request, template, context)
 
 
@@ -37,6 +41,10 @@ def home(request):
 
 
 def all(request):
+    print("/////////////////////////////////////////////////")
+    print(caches['default'])
+    print("/////////////////////////////////////////////////")
+
     categories = Category.objects.all()
 
     if request.method == 'POST':
